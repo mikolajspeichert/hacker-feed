@@ -4,7 +4,7 @@ import { createAction, actions } from '../../store/actions'
 
 import FeedItem, { Placeholder } from '../../components/FeedItem'
 import TabNavigator from '../../components/TabNavigator'
-import { urls } from '../../constants'
+import { urls, STORIES_MAX } from '../../constants'
 
 const withRedux = connect(
   state => state,
@@ -26,7 +26,7 @@ const Feed = ({ fetchFeed, clearFeed, feed: { url, isLoading, items } }) => {
   return (
     <TabNavigator onChange={clearFeed} selected={url}>
       {isLoading
-        ? [...Array(20)].map((_, i) => <Placeholder key={i} />) // eslint-disable-line
+        ? [...Array(STORIES_MAX)].map((_, i) => <Placeholder key={i} />) // eslint-disable-line
         : items
             .filter(Boolean)
             .map(({ id, ...props }) => <FeedItem key={id} {...props} />)}

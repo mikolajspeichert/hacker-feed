@@ -77,9 +77,9 @@ const VisitPlaceholder = styled(Visit)`
   opacity: 0.3;
 `
 
-const FeedItem = ({ by, url, title, time }) => {
+const FeedItem = ({ by, url, title, time: timeInSeconds }) => {
   const author = `by ${by}`
-  const dateString = new Date(time * 1000).toLocaleString() // weird api
+  const dateString = new Date(timeInSeconds * 1000).toLocaleString() // weird api
   return (
     <ItemContainer>
       <Title>

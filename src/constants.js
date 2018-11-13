@@ -3,4 +3,7 @@ const NEW_STORIES = '/newstories.json'
 const TOP_STORIES = '/topstories.json'
 const STORY = itemId => `/item/${itemId}.json`
 
+export const STORIES_MAX = 20
+
 export const urls = { HACKER_NEWS_URL, NEW_STORIES, TOP_STORIES, STORY }
+
